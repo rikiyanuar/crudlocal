@@ -1,0 +1,56 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  plugins:
+    - dart_code_metrics
+  exclude:
+    - lib/generated/**
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+
+dart_code_metrics:
+  anti-patterns:
+    - long-method
+    - long-parameter-list
+  metrics:
+    cyclomatic-complexity: 20
+    maximum-nesting-level: 7
+    number-of-parameters: 5
+    source-lines-of-code: 50
+    lines-of-code: 50
+    technical-debt: 1
+  metrics-exclude:
+    - test/**
+    - modules/**/test/**
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  rules-exclude:
+    - test/**
+    - modules/**/test/**
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  rules:
+    - avoid-nested-conditional-expressions:
+        acceptable-level: 2
+    - avoid-late-keyword
+    - avoid-unnecessary-type-assertions
+    - avoid-unused-parameters
+    - binary-expression-operand-order
+    - double-literal-format
+    - member-ordering-extended
+    - newline-before-return
+    - no-boolean-literal-compare
+    - no-equal-then-else
+    - no-object-declaration
+    - prefer-correct-identifier-length:
+        max-identifier-length: 30
+        min-identifier-length: 2
+    - prefer-first
+    - prefer-last
+    - always-remove-listener
+    - avoid-unnecessary-setstate
+    - avoid-wrapping-in-padding
+    - prefer-const-border-radius
+    - prefer-correct-type-name:
+        min-length: 3
+        max-length: 40
